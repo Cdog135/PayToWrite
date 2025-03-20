@@ -8,15 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Include Web3 and our JS file -->
   <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
   <script src="app.js" defer></script>
   <style>
     /* Global Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #667eea, #764ba2);
@@ -71,16 +68,24 @@
       font-size: 1.2em;
       margin: 10px 0;
     }
+    /* Wall container for messages */
     #messages {
+      position: relative;
+      width: 100%;
+      height: 500px;
       margin-top: 20px;
+      border: 2px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
     }
     .message {
+      position: absolute;
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 15px;
+      padding: 10px;
       border-radius: 10px;
-      margin: 10px 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      font-size: 1em;
     }
     .cost {
       color: #ffeb3b;
@@ -107,8 +112,9 @@
     <input id="messageInput" type="text" class="inputField" placeholder="Enter your message">
     <p>Total cost: <span id="totalCost">0</span> ETH</p>
     <button id="submitButton" class="button" disabled>Submit Message</button>
+    <!-- The wall where messages are placed in random spots -->
     <div id="messages"></div>
-    <!-- This div will display the submitted message in the center of the page -->
+    <!-- Optionally, display the last submitted message prominently -->
     <div id="centerMessage"></div>
   </main>
 </body>
