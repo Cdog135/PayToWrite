@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay to Write</title>
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
-    <script src="app.js" defer></script>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .message { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
-        .cost { color: green; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay to Write</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="app.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .message { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+    .cost { color: green; }
+    /* Styling for the center message display */
+    #centerMessage {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Pay-to-Write Wall</h1>
-    <button id="connectButton">Connect Wallet</button>
-    <p>Cost per character: <span id="costDisplay">Loading...</span> ETH</p>
-    <input id="messageInput" type="text" placeholder="Enter your message">
-    <p>Total cost: <span id="totalCost">0</span> ETH</p>
-    <button id="submitButton" disabled>Submit Message</button>
-    <div id="messages"></div> <!-- Ensure this div exists -->
+  <h1>Pay-to-Write Wall</h1>
+  <button id="connectButton">Connect Wallet</button>
+  <p>Cost per character: <span id="costDisplay">Loading...</span> ETH</p>
+  <input id="messageInput" type="text" placeholder="Enter your message">
+  <p>Total cost: <span id="totalCost">0</span> ETH</p>
+  <button id="submitButton" disabled>Submit Message</button>
+  <div id="messages"></div>
+  <!-- This div will display the submitted message in the middle of the page -->
+  <div id="centerMessage"></div>
 </body>
 </html>
