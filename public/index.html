@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay-to-Write Blockchain App</title>
-    <script src="ethers.min.js"></script>
-    <script defer src="app.js"></script>
+    <title>Pay to Write</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script src="app.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .message { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .cost { color: green; }
+    </style>
 </head>
 <body>
-    <h2>Pay-to-Write Blockchain App</h2>
-    <button onclick="connectWallet()">Connect Wallet</button>
-    <p id="walletAddress">Not Connected</p>
-
-    <h3>Submit a Message</h3>
-    <textarea id="messageInput" placeholder="Write your message here..."></textarea>
-    <button onclick="submitMessage()">Submit Message</button>
-    <p id="costInfo">Cost: 0 ETH</p>
-    
-    <h3>Message History</h3>
-    <ul id="messageList"></ul>
+    <h1>Pay-to-Write Wall</h1>
+    <button id="connectButton">Connect Wallet</button>
+    <p>Cost per character: <span id="costDisplay">Loading...</span> ETH</p>
+    <input id="messageInput" type="text" placeholder="Enter your message">
+    <p>Total cost: <span id="totalCost">0</span> ETH</p>
+    <button id="submitButton" disabled>Submit Message</button>
+    <div id="messages"></div> <!-- Ensure this div exists -->
 </body>
 </html>
